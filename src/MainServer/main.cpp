@@ -127,14 +127,20 @@ int main(int argc, char **argv)
 #ifdef SIGPIPE
 	signal(SIGPIPE, _);
 #endif
-	while (true) {
-		if (sock.hasData()) {
-			std::cout << "Accepting..." << std::endl;
 
+	std::mutex m;
+	std::thread t = std::thread([&m, &sock]{
+		while (true) {
 			auto s = sock.accept();
 
+			m.lock();
 			entries.emplace_back(s);
+			m.unlock();
 		}
+	});
+
+	while (true) {
+		m.lock();
 		for (auto &entry : entries) {
 			entry.update();
 			if (time(nullptr) - entry.last > 30) {
@@ -143,6 +149,7 @@ int main(int argc, char **argv)
 			}
 		}
 		entries.remove_if([](const Entry &e) { return !e.connected; });
+		m.unlock();
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 	}
 }
