@@ -3,6 +3,7 @@ project(SokuLobbies)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/pkgs)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
 if (CMAKE_BUILD_TYPE STREQUAL Debug)
 	if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
@@ -28,7 +29,7 @@ if (ASAN)
 endif ()
 
 include_directories(src/Common)
-find_package(SFML)
+find_package(SFML COMPONENTS network)
 
 add_executable(
 	SokuLobbiesMainServer
