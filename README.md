@@ -21,7 +21,7 @@ sudo dnf install gcc-c++
 ```
 
 ### CMake
-Minimum required version of CMake is `3.15`. [^1]
+Minimum required version of CMake is `3.15`.[^1]
 [^1]: When Ham originally wrote the CMake section, Debian did not have this particular version of CMake in its
 repos. Hence he included extra steps for possibly compiling CMake itself (which also required the OpenSSL Library)
 #### Debian/Ubuntu:
@@ -89,6 +89,6 @@ If everything is right, it should have an output similar to the screenshot below
 ![](https://i.imgur.com/CnoN6qr.png)
 
 ## Keep the Lobby running
-If it's your first time running a server, you might be wondering how to keep it running once you close your session. This is achieved by using a Linux utility called **`screen`**. 
+If it's your first time running a server, you might be wondering how to keep it running once you close your terminalsession. This is achieved by using a Linux utility called **`screen`**.
 
 You can find a tutorial [here](https://linuxize.com/post/how-to-use-linux-screen/)
