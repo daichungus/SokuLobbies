@@ -21,7 +21,7 @@ sudo dnf install gcc-c++
 ```
 
 ### CMake
-Minimum required version of CMake is `3.15`. [^1]
+Minimum required version of CMake is `3.15`.
 #### Debian/Ubuntu:
 ```
 sudo apt install cmake
@@ -30,7 +30,7 @@ sudo apt install cmake
 ```
 sudo dnf install cmake
 ```
-### SFML [^2]
+### SFML
 #### Debian/Ubuntu:
 ```
 sudo apt-get install libsfml-dev
@@ -62,7 +62,7 @@ Otherwise, if you are using the original source code for Windows, you can:
 - Directly replace it with [the modified file](https://github.com/daichungus/SokuLobbies/blob/linux/CMakeLists.txt).
 - Make the [changes yourself with your favorite editor](https://github.com/daichungus/SokuLobbies/commit/c8c9760f8ac20e5bda66fe125fe38d8b022489ae).
 
-With everything set, we head to the src folder (should be in the root folder of SokuLobbies) and prepare our build
+With everything set, we `cd` to the `src` directory in the root folder of `SokuLobbies` and prepare our build
 
 ```
 cmake .. -DCMAKE_BUILD_TYPE=Release -DMAIN_SERVER_HOST=pinkysmile.fr
@@ -74,23 +74,21 @@ Once it finishes, we finally build our files
 cmake --build . --target SokuLobbiesServer
 ```
     
-Our server is finally compiled, yay! We can run [^3] it with
+Our server is finally compiled, yay! We can run it with
 
 ```
 ./SokuLobbiesServer <port> <max players> <name of loby> <password (blank if none)>
 ```
-
 If everything is right, it should have an output similar to the screenshot below: 
 
 ![](https://i.imgur.com/CnoN6qr.png)
+
+**NOTE:** If you want to run the program from any directory, install the program to the system with: 
+```
+sudo cp SokuLobbiesServer /usr/local/bin
+```
 
 ## Keep the Lobby running
 If it's your first time running a server, you might be wondering how to keep it running once you close your terminalsession. This is achieved by using a Linux utility called **`screen`**.
 
 You can find a tutorial [here](https://linuxize.com/post/how-to-use-linux-screen/)
-
-[^1]: When Ham originally wrote the CMake section, Debian did not have this particular version of CMake in its repos. Hence he included extra steps for possibly compiling CMake itself (which also required the OpenSSL Library)
-
-[^2]: Ham was actually unsure if it's required to install the packages since the libraries that SokuLobbies snatches from are already included in the `src` directory, but Pinky said it was required.
-
-[^3]: If you want to run the program from any directory, copy the `SokuLobbiesServer` binary with `sudo` to `/usr/local/bin`, or add the directory to `$PATH`. The first method is recommended by daichungus.
