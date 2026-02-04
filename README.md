@@ -89,7 +89,8 @@ If it's your first time running a server, you might be wondering how to keep it 
 
 You can find a tutorial [here](https://linuxize.com/post/how-to-use-linux-screen/)
 
-[^1]: When Ham originally wrote the CMake section, Debian did not have this particular version of CMake in its
-repos. Hence he included extra steps for possibly compiling CMake itself (which also required the OpenSSL Library)
+[^1]: When Ham originally wrote the CMake section, Debian did not have this particular version of CMake in its repos. Hence he included extra steps for possibly compiling CMake itself (which also required the OpenSSL Library)
+
 [^2]: Ham was actually unsure if it's required to install the packages since the libraries that SokuLobbies snatches from are already included in the `src` directory, but Pinky said it was required.
+
 [^3]: If you want to run the program from any directory, copy the `SokuLobbiesServer` binary with `sudo` to `/usr/local/bin`, or add the directory to `$PATH`. The first method is recommended by daichungus.
