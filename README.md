@@ -21,7 +21,7 @@ sudo dnf install gcc-c++
 ```
 
 ### CMake
-Minimum required version of CMake is `3.15`.[^1]
+Minimum required version of CMake is `3.15`. [^1]
 #### Debian/Ubuntu:
 ```
 sudo apt install cmake
@@ -30,7 +30,7 @@ sudo apt install cmake
 ```
 sudo dnf install cmake
 ```
-### SFML[^2]
+### SFML [^2]
 #### Debian/Ubuntu:
 ```
 sudo apt-get install libsfml-dev
@@ -74,7 +74,7 @@ Once it finishes, we finally build our files
 cmake --build . --target SokuLobbiesServer
 ```
     
-Our server is finally compiled, yay! We can run[^3] it with
+Our server is finally compiled, yay! We can run [^3] it with
 
 ```
 ./SokuLobbiesServer <port> <max players> <name of loby> <password (blank if none)>
