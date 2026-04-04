@@ -73,8 +73,12 @@ Once it finishes, we finally build our files
 ```
 cmake --build . --target SokuLobbiesServer
 ```
-    
-Our server is finally compiled, yay! We can run it with
+or
+```
+make -j
+```
+
+Our server is finally compiled, yay! We can run it within the directory with:
 
 ```
 ./SokuLobbiesServer <port> <max players> <name of loby> <password (blank if none)>
@@ -83,10 +87,12 @@ If everything is right, it should have an output similar to the screenshot below
 
 ![](https://i.imgur.com/CnoN6qr.png)
 
-**NOTE:** If you want to run the program from any directory, install the program to the system with: 
+**NOTE:** If you want to run the program system-wide regardless of user, install with: 
 ```
 sudo cp SokuLobbiesServer /usr/local/bin
 ```
+
+Substitute `/usr/local/bin` with `$HOME/.local/bin` or similar if you have a preferred install location.
 
 ## Keep the Lobby running
 If it's your first time running a server, you might be wondering how to keep it running once you close your terminalsession. This is achieved by using a Linux utility called **`screen`**.
